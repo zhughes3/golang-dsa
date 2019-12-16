@@ -114,5 +114,4 @@ func TestString(t *testing.T) {
 	if b.String() != expected {
 		t.Errorf("Expected %s, got %s", expected, b.String())
 	}
-
 }

@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-// LinkedList is a linkedlist
+// LinkedList is a singly linked list of integers.
 type LinkedList struct {
 	Head *Node
 	size int
@@ -15,7 +15,7 @@ func (ll *LinkedList) IsEmpty() bool {
 	return ll.Size() == 0
 }
 
-// Insert does
+// Insert a new node into the list with supplied value.
 func (ll *LinkedList) Insert(val int) {
 	n := Node{Value: val}
 	if ll.Head == nil {
@@ -33,7 +33,7 @@ func (ll *LinkedList) Insert(val int) {
 	ll.size++
 }
 
-// Delete first node with supplied value
+// Delete first node found with supplied value.
 func (ll *LinkedList) Delete(val int) {
 	current := ll.Head
 	if current.Value == val {
@@ -53,7 +53,7 @@ func (ll *LinkedList) Delete(val int) {
 	}
 }
 
-// Size returns number of Nodes in LinkedList
+// Size returns number of Nodes in LinkedList.
 func (ll *LinkedList) Size() int {
 	return ll.size
 }
@@ -70,6 +70,7 @@ func (ll *LinkedList) RetrieveNode(val int) *Node {
 	return nil
 }
 
+//String outputs the list in a readable format.
 func (ll *LinkedList) String() string {
 	var sb strings.Builder
 	current := ll.Head
